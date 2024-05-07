@@ -1,0 +1,20 @@
+<!-- Dans detail_produit.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Détails du Post</title>
+</head>
+<body>
+    <h1>Détails du Post : {{ post.title }}</h1>
+    <p>Auteur : {{ post.author }}</p>
+    <p>Auteur.id : {{post.author.id}}</p>
+    <p>Date de création : {{ post.created_on }}</p>
+    <p>Content: {{post.content}}</p>
+    {% if post.image %}
+        <p><img src="/media/{{post.image}}"/></p>
+    {% endif %}
+    <li><a href="{%url 'modifier_post' post.pk%}">modifier post</a></li>
+    <li><a href="{%url 'supprimer_post' post.pk%}">supprimer post</a></li>
+</body>
+</html>

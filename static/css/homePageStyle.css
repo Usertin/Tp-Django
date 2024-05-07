@@ -1,0 +1,133 @@
+/*-- -------------------------- -->
+<---         Collection         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #collection-1577 {
+      padding: var(--sectionPadding);
+      position: relative;
+      z-index: 1;
+    }
+    #collection-1577 .cs-container {
+      width: 100%;
+      max-width: 80rem;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* 48px - 64px */
+      gap: clamp(3rem, 6vw, 4rem);
+    }
+    #collection-1577 .cs-content {
+      /* set text align to left if content needs to be left aligned */
+      text-align: center;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: center;
+    }
+    #collection-1577 .cs-title {
+      margin: 0;
+    }
+    #collection-1577 .cs-topper {
+      color: var(--secondary);
+    }
+    #collection-1577 .cs-card-group {
+      list-style: none;
+      width: 100%;
+      /* changes to 1280px on tablet */
+      max-width: 34.375rem;
+      margin: auto;
+      padding: 0;
+      display: grid;
+      grid-template-rows: repeat(12, 1fr);
+      grid-auto-flow: row;
+    }
+    #collection-1577 .cs-item {
+      max-width: 100%;
+      grid-column: span 12;
+      position: relative;
+    }
+    #collection-1577 .cs-item:hover .cs-background img {
+      opacity: .5;
+      transform: scale(1.4);
+    }
+    #collection-1577 .cs-link {
+      text-decoration: none;
+      /* changes at tablet */
+      height: 60vw;
+      max-height: 21.75rem;
+      padding: 2.5rem 1.5rem;
+      /* prevents padding from affecting height and width */
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #collection-1577 .cs-background {
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      /* set to -2 so the gradient overlay (z-index: -1) appears in front of the images, but behind the text */
+      z-index: -2;
+    }
+    #collection-1577 .cs-background img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s, opacity .3s;
+    }
+    #collection-1577 .cs-category {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.2em;
+      text-align: center;
+      text-decoration: none;
+      width: fit-content;
+      /* 12px - 20px top & bottom, 16px - 24px sides*/
+      padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 3vw, 1.5rem);
+      color: var(--main-white, #ffffff);
+      position: relative;
+      transition: color .3s;
+      /* blurred background - done as a pseudo element so backdrop-filter won't distort the text */
+    }
+    #collection-1577 .cs-category:hover {
+      color: var(--headerColor);
+    }
+    #collection-1577 .cs-category:hover:before {
+      background-color: #ffffff;
+    }
+    #collection-1577 .cs-category:before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(8px);
+      --webkit-backdrop-filter: blur(8px);
+      background-color: rgba(255, 255, 255, 0.2);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: background-color 0.3s;
+    }
+  }
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48rem) {
+    #collection-1577 .cs-card-group {
+      max-width: 80rem;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    #collection-1577 .cs-item {
+      /* 180px - 348px */
+      height: clamp(11.75rem, 25vw, 21.75rem);
+      grid-column: span 3;
+    }
+  }
+                                  

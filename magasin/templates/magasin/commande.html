@@ -1,0 +1,33 @@
+{%  extends 'base.html' %}
+{% load widget_tweaks %}
+{% block title %} Passer commande {% endblock %}
+{% block content %}
+<br><br><br><br><br>
+    <div class="col-md-12 text-center">
+        <h2>Manip Commandes ...... </h2>
+    </div> 
+    <form method='POST' class="post-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-default">Enregistrer commande</button>
+    </form>
+{% endblock %}
+<!--{ extends 'base.html'%}
+
+
+{ block content %}
+    <div class="col-md-12 text-center">
+        <h2>Ajouter commande ...</h2>
+    </div>
+    <form method="POST" class="post-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>Date commande: </p>{% render_field form.dateCde disabled="True" class+="form-control"%}
+        <p>Produits: </p>{% render_field form.produits class+="form-control"%}
+        <p>Totale: </p>{% render_field form.totalCde class+="form-control"%}
+        <button type="submit" class="btn btn-default">Enregistrer commande</button>
+    </form>
+    <h2>Liste de commandes</h2>
+    {% for commande in commandes %}
+        <p>{{ commande }}</p>
+    {% endfor %}
+{% endblock } -->

@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% block title %} majProduits {% endblock %}
+
+{% block content %}
+    <br><br><br><br><br>
+    <div class="col-md-12 text-center">
+        <h2>manip Produits ...</h2>
+    </div>
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-default">Enregistrer</button>
+    </form>
+{% endblock %}

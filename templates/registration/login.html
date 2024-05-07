@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<br><br><br><br><br>
+<h2>Se connecter </h2>
+<div>
+    <form method="post" action="{%url 'login'%}">
+        {% csrf_token %}
+        {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+                <p class="alert alert-danger">{{ error }}</p>
+
+            {% endfor %}
+        {% endif %}
+        <table>
+            {% for field in form %}
+                <tr>
+                    <td>{{ field.label_tag }}</td>
+                    <td>{{ field }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <button type="submit">se connecter</button>
+    </form>
+</div>
+<div>
+    <small>
+        Pas encore inscrit? <a href="{%url 'register'%}">S'inscrire</a>
+        <br>
+        Mot de passe oublié? <a href="{%url 'password_reset'%}">Renouveler mon mot de passe</a>
+    </small>
+</div>
+{% endblock %}

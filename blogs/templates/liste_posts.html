@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Posts</title>
+</head>
+<body>
+    <h2><a href="{%url 'creer_post'%}">ajouter post</a></h2>
+    <h1>Liste des posts</h1>
+    <br>
+    <ul>
+        {% for post in posts %}
+            <li><a href="{% url 'detail_post' post.pk %}">details de {{ post.title }}</a></li>
+            {% include 'detail_post.html'%}
+            <hr>
+        {% endfor %}
+    </ul>
+</body>
+</html>
