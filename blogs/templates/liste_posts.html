@@ -1,19 +1,45 @@
+{%extends "baseBlog.html" %}
+{%load static%}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Liste des Posts</title>
+    <link rel="stylesheet" href="{%static 'css/bootstrap.css'%}">
 </head>
 <body>
-    <h2><a href="{%url 'creer_post'%}">ajouter post</a></h2>
-    <h1>Liste des posts</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <center><h1>Liste des posts</h1></center>
     <br>
     <ul>
         {% for post in posts %}
-            <li><a href="{% url 'detail_post' post.pk %}">details de {{ post.title }}</a></li>
-            {% include 'detail_post.html'%}
-            <hr>
+            <div class="card text-center">
+                <div class="card-body">
+                    
+                    
+                </div>
+                <hr>
+            </div>
+            <div class="row g-0 bg-body-secondary position-relative">
+                <div class="col-md-6 mb-md-0 p-md-4">
+                    {% if post.image %}
+                        <img class="w-100" src="media/{{post.image}}" alt="Card image cap">
+                    {% endif %}
+                </div>
+                <div class="col-md-6 p-4 ps-md-0">
+                    <h5 class="mt-0">titre: {{post.title}}</h5>
+                    <p class="card-text">auteur: {{post.author}}</p>
+                    <p class="card-text">content: {{post.content}}</p>
+                    <a href="{% url 'detail_post' post.pk %}" class="stretched-link">Details</a>
+                </div>
+              </div>
         {% endfor %}
     </ul>
 </body>
 </html>
+{% endblock%}

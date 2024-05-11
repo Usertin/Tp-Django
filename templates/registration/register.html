@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>S'inscrire</h2>
+<br><br><br><br><br>
+<center><h2>S'inscrire</h2></center>
 <form method="post">
     {% csrf_token %}
     <table>
@@ -17,7 +18,7 @@
             {% endfor %}
         {% endfor %}
     </table>
-    <button type="submit">s'inscrire</button>
+    <button type="submit" class="btn btn-outline-success" style="width: 100%;">s'inscrire</button>
 </form>
 <div>
     <small>

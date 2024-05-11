@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <br><br><br><br><br>
-<h2>Se connecter </h2>
+<center><h2>Se connecter </h2></center>
 <div>
     <form method="post" action="{%url 'login'%}">
         {% csrf_token %}
@@ -19,7 +19,7 @@
                 </tr>
             {% endfor %}
         </table>
-        <button type="submit">se connecter</button>
+        <button type="submit" class="btn btn-outline-success" style="width: 100%;">se connecter</button>
     </form>
 </div>
 <div>

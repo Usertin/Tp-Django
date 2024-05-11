@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'blogs.apps.BlogsConfig',
     'rest_framework',
     'widget_tweaks',
+    "bootstrap4"
 ]
 
 MIDDLEWARE = [

@@ -1,13 +1,23 @@
+{% extends "baseBlog.html"%}
+{%load static%}
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Créer le Post</title>
+    <link rel="stylesheet" href="{%static 'css/bootstrap.css'%}">
 </head>
+<br>
+<br>
+<br>
+<br>
+<br>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">creer post</button>
+    <button type="submit" class="btn btn-outline-success" style="width: 100%;">creer post</button>
 </form>
 </html>
-    
+{%endblock%}

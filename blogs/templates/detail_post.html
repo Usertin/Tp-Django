@@ -1,20 +1,58 @@
-<!-- Dans detail_produit.html -->
+{%extends 'baseBlog.html'%}
+{%load static%}
+{%block content%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Détails du Post</title>
+    <link rel="stylesheet" href="{%static 'css/bootstrap.css'}%">
 </head>
 <body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <h1>Détails du Post : {{ post.title }}</h1>
-    <p>Auteur : {{ post.author }}</p>
-    <p>Auteur.id : {{post.author.id}}</p>
-    <p>Date de création : {{ post.created_on }}</p>
-    <p>Content: {{post.content}}</p>
-    {% if post.image %}
-        <p><img src="/media/{{post.image}}"/></p>
-    {% endif %}
-    <li><a href="{%url 'modifier_post' post.pk%}">modifier post</a></li>
-    <li><a href="{%url 'supprimer_post' post.pk%}">supprimer post</a></li>
+    <table class="table  table-hover">
+        <tr>
+            <td>Auteur : </td>
+            <td>{{ post.author }}</td>
+        </tr>
+        <tr>
+            <td>Auteur.id : </td>
+            <td>{{post.author.id}}</td>
+        </tr>
+        <tr>
+            <td>Date de création : </td>
+            <td>{{ post.created_on }}</td>
+        </tr>
+        <tr>
+            <td>Content: </td>
+            <td>{{post.content}}</td>
+        </tr>
+        {% if post.image %}
+            <tr>
+                <td>
+                    Image : 
+                </td>
+                <td>
+                    <img src="/media/{{post.image}}"/>
+                </td>
+            </tr>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <tr>
+                <td>
+                    <button type="button" class="btn btn-outline-secondary" href=""><a href="{%url 'modifier_post' post.pk%}" style="text-decoration: none;color: black;">modifier post</a></button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-outline-danger"><a href="{%url 'supprimer_post' post.pk%}" style="text-decoration: none;color: black;">supprimer post</a></button>
+                </td>
+            </tr>   
+        {%endif%}
+    </table>
 </body>
 </html>
+{%endblock%}
