@@ -1,80 +1,84 @@
 {% load static %}
 <!DOCTYPE html">
 <html lang="fr">
-<head>
-    <meta charset="utf-8" />
-    <title>Création d&#39;un design étape par étape - Etape n°1 : Le code xhtml</title>
-    <link rel="stylesheet" href="{% static 'css/homePageStyle.css'%}">  
-</head>
-<!-- ============================================ -->
-<!--                  Collection                  -->
+    <head>
+        <link rel="stylesheet" href="{% static 'css/homePageStyle.css'%}">  
+    </head>
+<body>
+    <!-- ============================================ -->
+<!--                  Services                    -->
 <!-- ============================================ -->
 
-<section id="collection-1577">
+<section id="services-296">
     <div class="cs-container">
         <div class="cs-content">
-            <span class="cs-topper">Home</span>
-            <h2 class="cs-title">Colored Design</h2>
+            <span class="cs-topper">Our Services</span>
+            <h2 class="cs-title">We Are Committed To Delivering Top Quality Legal Services</h2>
+            <p class="cs-text">
+                At Stitch Law, let us help you solve problems so that you can focus on your mission. We support businesses through periods of expansion, succession.
+            </p>
         </div>
         <ul class="cs-card-group">
             <li class="cs-item">
-                <a href="/magasin/" class="cs-link">
-                    <span class="cs-category">Application n°1 : Magasin</span>
-                    <picture class="cs-background" aria-hidden="true">
-                        <source media="(max-width: 600px)"
-                                srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/ecomm-offer-tshirts.png">
-                        <source media="(min-width: 601px)"
-                                srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/ecomm-offer-tshirts.png">
-                        <img loading="lazy" decoding="async"
-                                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/ecomm-offer-tshirts.png"
-                                width="365" height="201" alt="t-shirt">
-                    </picture>
+                <a class="cs-link" href="/magasin/">
+                    <img class="cs-icon" src="{%static 'img/shoppingcart.png'%}" alt="icon" width="" height="" loading="lazy" decoding="async" aria-hidden="true">
+                    <h3 class="cs-h3">Magasin</h3>
+                    <p class="cs-item-text">
+                        Une application Django pour gérer un magasin en ligne, y compris la gestion des produits, des commandes et des paiements.
+                    </p>
                 </a>
+                <picture class="cs-image"  aria-hidden="true">
+                    <source media="(max-width: 600px)" srcset="{%static 'img/magasin.jpg'%}">
+                    <source media="(min-width: 601px)" srcset="{%static 'img/magasin.jpg'%}">
+                    <img loading="lazy" decoding="async" src="{%static 'img/magasin.jpg'%}" alt="library" width="413" height="266">
+                </picture>
             </li>
             <li class="cs-item">
                 <a href="/jeux/" class="cs-link">
-                    <span class="cs-category">Application n°2 : Jeux videos</span>
-                    <picture class="cs-background" aria-hidden="true">
-                        <source media="(max-width: 600px)"
-                                srcset="https://media.gq-magazine.co.uk/photos/645b5c3c8223a5c3801b8b26/16:9/w_1280,c_limit/100-best-games-hp-b.jpg">
-                        <source media="(min-width: 601px)"
-                                srcset="https://media.gq-magazine.co.uk/photos/645b5c3c8223a5c3801b8b26/16:9/w_1280,c_limit/100-best-games-hp-b.jpg">
-                        <img loading="lazy" decoding="async"
-                                src="https://media.gq-magazine.co.uk/photos/645b5c3c8223a5c3801b8b26/16:9/w_1280,c_limit/100-best-games-hp-b.jpg" width="365"
-                                height="201" alt="purse">
-                    </picture>
+                    <img class="cs-icon" src="{%static 'img/jeux.png'%}" alt="icon" width="" height="" loading="lazy" decoding="async" aria-hidden="true">
+                    <h3 class="cs-h3">Jeux</h3>
+                    <p class="cs-item-text">
+                        Une application Django pour organiser et gérer des jeux en ligne ou hors ligne, avec des fonctionnalités telles que la création de tournois, la gestion des scores et la communication entre les joueurs.
+                    </p>
                 </a>
+                <picture class="cs-image"  aria-hidden="true">
+                    <source media="(max-width: 600px)" srcset="{%static 'img/jeux.jpg'%}">
+                    <source media="(min-width: 601px)" srcset="{%static 'img/jeux.jpg'%}">
+                    <img loading="lazy" decoding="async" src="{%static 'img/jeux.jpg'%}" alt="library" width="413" height="266">
+                </picture>
             </li>
             <li class="cs-item">
                 <a href="/blogs/" class="cs-link">
-                    <span class="cs-category">Application n°3 : Blogs en ligne</span>
-                    <picture class="cs-background" aria-hidden="true">
-                        <source media="(max-width: 600px)"
-                                srcset="https://www.chitkara.edu.in/blogs/wp-content/uploads/2023/09/Blogging-in-Digital-Marketing.jpg">
-                        <source media="(min-width: 601px)"
-                                srcset="https://www.chitkara.edu.in/blogs/wp-content/uploads/2023/09/Blogging-in-Digital-Marketing.jpg">
-                        <img loading="lazy" decoding="async"
-                                src="https://www.chitkara.edu.in/blogs/wp-content/uploads/2023/09/Blogging-in-Digital-Marketing.jpg"
-                                width="365" height="201" alt="shoes">
-                    </picture>
+                    <img class="cs-icon" src="{%static 'img/blog.png'%}" alt="icon" width="" height="" loading="lazy" decoding="async" aria-hidden="true">
+                    <h3 class="cs-h3">Blogs</h3>
+                    <p class="cs-item-text">
+                        Une application Django pour la création et la gestion de blogs, offrant des fonctionnalités telles que la publication d'articles, la gestion des commentaires et la personnalisation de l'apparence.
+                    </p>
                 </a>
+                <picture class="cs-image"  aria-hidden="true">
+                    <source media="(max-width: 600px)" srcset="{%static 'img/blogs.jpg'%}">
+                    <source media="(min-width: 601px)" srcset="{%static 'img/blogs.jpg'%}">
+                    <img loading="lazy" decoding="async" src="{%static 'img/blogs.jpg'%}" alt="library" width="413" height="266">
+                </picture>
             </li>
             <li class="cs-item">
-                <a href="" class="cs-link">
-                    <span class="cs-category">Application n°? : WIP Application</span>
-                    <picture class="cs-background" aria-hidden="true">
-                        <source media="(max-width: 600px)"
-                                srcset="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*mwXHpdt6CTQHxH78dwc6NA.jpeg">
-                        <source media="(min-width: 601px)"
-                                srcset="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*mwXHpdt6CTQHxH78dwc6NA.jpeg">
-                        <img loading="lazy" decoding="async"
-                                src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*mwXHpdt6CTQHxH78dwc6NA.jpeg"
-                                width="365" height="201" alt="perfume">
-                    </picture>
+                <a class="cs-link" href="">
+                    <img class="cs-icon" src="{%static 'img/wip.png'%}" alt="icon" width="" height="" loading="lazy" decoding="async" aria-hidden="true">
+                    <h3 class="cs-h3">WIP</h3>
+                    <p class="cs-item-text">
+                        Une application en cours de développement avec Django, destinée à une fonctionnalité ou un service spécifique qui n'est pas encore prêt à être pleinement déployé.
+                    </p>
                 </a>
+                <picture class="cs-image">
+                    <source media="(max-width: 600px)" srcset="{%static 'img/wip.jpg'%}">
+                    <source media="(min-width: 601px)" srcset="{%static 'img/wip.jpg'%}">
+                    <img loading="lazy" decoding="async" src="{%static 'img/wip.jpg'%}" alt="library" width="413" height="266" aria-hidden="true">
+                </picture>
             </li>
         </ul>
     </div>
 </section>
                                 
+
+</body>
 </html>
