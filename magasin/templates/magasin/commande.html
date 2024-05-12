@@ -4,13 +4,37 @@
 {% block content %}
 <br><br><br><br><br>
     <div class="col-md-12 text-center">
-        <h2>Manip Commandes ...... </h2>
+        <h2>Manip Commandes</h2>
     </div> 
     <form method='POST' class="post-form" enctype="multipart/form-data">
         {% csrf_token %}
         {{form.as_p}}
-        <button type="submit" class="btn btn-default">Enregistrer commande</button>
+        <button type="submit" class="btn btn-outline-success" style="width: 100%;">Enregistrer commande</button>
     </form>
+    <br>
+<br>
+<hr>
+<br>
+<br>
+    <div class="col-md-12 text-center"><h2>liste de commandes</h2></div>
+<table class="table">
+    <thead>
+        <tr>
+          <th scope="col">Date Commande</th>
+          <th scope="col">Produits</th>
+        </tr>
+      </thead>
+{% for commande in commandes %}
+        <tbody>
+          <tr>
+            <td scope="row">{{ commande.dateCde }}</td>
+            {%for produit in commande.produits.all%}
+            <td>{{ produit }}</td>
+            {%endfor%}
+          </tr>
+        </tbody>
+{% endfor %}
+</table>
 {% endblock %}
 <!--{ extends 'base.html'%}
 

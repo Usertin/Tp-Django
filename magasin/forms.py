@@ -14,11 +14,27 @@ class ProduitForm(ModelForm):
         #fields = ['libelle','description']
         
 class CommandeForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user',None)
+        super().__init__(*args, **kwargs)
+        #self.fields['author'].disabled = False
+        
+        self.fields['dateCde'].widget.attrs['class'] = 'form-control'
+        self.fields['produits'].widget.attrs['class'] = 'form-control'
     class Meta:
         model = Commande
         fields = "__all__"
     
 class FournisseurForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user',None)
+        super().__init__(*args, **kwargs)
+        #self.fields['author'].disabled = False
+        
+        self.fields['nom'].widget.attrs['class'] = 'form-control'
+        self.fields['adresse'].widget.attrs['class'] = 'form-control'
+        self.fields['email'].widget.attrs['class'] = 'form-control'
+        self.fields['telephone'].widget.attrs['class'] = 'form-control'
     class Meta:
         model = Fournisseur
         fields = "__all__"

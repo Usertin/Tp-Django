@@ -3,19 +3,39 @@
 {% block content %}
 <br><br><br><br><br>
 <div class="col-md-12 text-center">
-    <h2>Ajouter Fournisseur ...</h2>
+    <h2>Ajouter Fournisseur</h2>
 </div>
 <form method="POST" class="post-form">
     {% csrf_token %}
     {{form.as_p}}
-    <button type="submit" class="btn btn-default">Enregistrer fournisseur</button>
+    <button type="submit" class="btn btn-outline-success" style="width: 100%;">Enregistrer fournisseur</button>
 </form>
-<h2>liste de fournisseurs</h2>
-
+<br>
+<br>
+<hr>
+<br>
+<br>
+<div class="col-md-12 text-center"><h2>liste de fournisseurs</h2></div>
+<table class="table">
+    <thead>
+        <tr>
+          <th scope="col">Nom Fournisseur</th>
+          <th scope="col">Adresse Fournisseur</th>
+          <th scope="col">Email Fournisseur</th>
+          <th scope="col">Telephone Fournisseur</th>
+        </tr>
+      </thead>
 {% for fournisseur in fournisseurs %}
-    <p>nom fournisseur: {{ fournisseur.nom }}</p>
-    <p>adresse fournisseur: {{ fournisseur.adresse }}</p>
-    <p>email fournisseur: {{ fournisseur.email }}</p>
-    <p>telephone fournisseur: {{ fournisseur.telephone }}</p>
+    
+        
+        <tbody>
+          <tr>
+            <td scope="row">{{ fournisseur.nom }}</td>
+            <td>{{ fournisseur.adresse }}</td>
+            <td>{{ fournisseur.email }}</td>
+            <td>{{ fournisseur.telephone }}</td>
+          </tr>
+        </tbody>
 {% endfor %}
+</table>
 {% endblock %}
